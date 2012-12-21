@@ -39,7 +39,7 @@ if param in binaries:
     print(" Command '%s' can be found in:" % param, file=sys.stderr)
     for item in binaries[param]:
         print("    package '%s' (%s)" % (item[1], item[0]), file=sys.stderr)
-    exit()
+    exit(127)
 
     
 def similar_words(word):
@@ -64,9 +64,11 @@ for p in params:
             
 if not found:
     print("%s: command not found" % param)
-    exit()
+    exit(127)
 print(" No command '%s' found, did you mean:" % (param), file=sys.stderr)
 for item in found:
     cmd_name, locations = item
     loc_string = ', '.join([("package '%s' (%s)" % (c, r)) for r, c in locations])
     print("  Command '%s' from %s" % (cmd_name, loc_string), file=sys.stderr)
+    
+exit(127)
