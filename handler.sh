@@ -5,8 +5,8 @@
 # installation of packages available from the repository
 
 command_not_found_handle() {
-  if  [ -x /usr/lib/command-not-found ]; then
-     /usr/lib/command-not-found "$1" 
+  if  [ -x /usr/bin/cnf ]; then
+     /usr/bin/cnf "$1" 
      return $?
   else
      return 127
