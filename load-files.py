@@ -14,11 +14,6 @@ def fetch_file(url, path):
     fd = open(path, 'wb')
     shutil.copyfileobj(response, fd)
     fd.close()
-'''import json
-with open('/tmp/files', 'r') as fd:
-    binaries = json.load(fd)
-print len(binaries)
-exit()'''
 
 if len(sys.argv) < 2:
     print 'usage: load-files.py platfrom_name'
@@ -33,8 +28,6 @@ for repo in repos:
         url = url_template % (platform, repo, subrepo)
         urls[url] = repo
 
-        
-        
 re_bin = re.compile('((/usr/bin/)|(/bin/)|(/usr/local/bin)|(/sbin)|(/usr/sbin)|(/usr/local/sbin)|(/usr/games)).+')
 binaries = {}
 for url in urls:

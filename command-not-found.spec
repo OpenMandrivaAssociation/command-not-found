@@ -1,3 +1,5 @@
+%define data_version 2012.12.21
+
 Name:           command-not-found
 Version:        1.0
 Release:        1
@@ -19,6 +21,7 @@ or similar ones.
 
 
 %package -n     command-not-found-data
+Version:        %{data_version}
 Summary:        Data files for command-not-found
 Group:          File tools
 
@@ -32,11 +35,11 @@ This package will be rebuilt every week with new data.
 
 %install
 mkdir -p %{buildroot}/usr/share/command-not-found
+mkdir -p %{buildroot}/usr/lib
 mkdir -p %{buildroot}/etc/profile.d
 cp command-not-found.py  %{buildroot}/usr/lib/command-not-found
 cp data.json %{buildroot}/usr/share/command-not-found/data.json
 cp handler.sh %{buildroot}/etc/profile.d/91cnf.sh
-ln -s %{_datadir}/bash-completion/abf %{buildroot}/%{_sysconfdir}/bash_completion.d/abf
 
 
 %files
