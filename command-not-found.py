@@ -1,10 +1,28 @@
 #!/usr/bin/python
 
+# Anton Kirilenko, 2012,
+# Licensed under GPL, see http://www.gnu.org/licenses/gpl-2.0.html
+# for the whole text
+
 from __future__ import print_function
 import json
 import sys
+import argparse
 
-if len(sys.argv) < 2:
+
+def parse_command_line():
+    global command_line
+    arg_parser = argparse.ArgumentParser(description='Search for commands in repository.')
+    arg_parser.add_argument('command', action='store', nargs='?', help='Command to search for')
+    args = sys.argv[1:]
+    if not args:
+        exit()
+    command_line  = arg_parser.parse_args(args)
+    
+
+parse_command_line()
+
+if not command_line.command:
     exit(15)
     
 try:
@@ -15,7 +33,7 @@ except:
     
 
 
-param = sys.argv[1]
+param = command_line.command
 
 if param in binaries:
     print(" Command '%s' can be found in:" % param, file=sys.stderr)
@@ -47,7 +65,7 @@ for p in params:
 if not found:
     print("%s: command not found" % param)
     exit()
-print("No command '%s' found, did you mean:" % (param), file=sys.stderr)
+print(" No command '%s' found, did you mean:" % (param), file=sys.stderr)
 for item in found:
     cmd_name, locations = item
     loc_string = ', '.join([("package '%s' (%s)" % (c, r)) for r, c in locations])
