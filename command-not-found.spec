@@ -19,13 +19,14 @@ or similar ones.
 %prep
 %setup -q -n %{name}
 
+
 %install
 mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/etc/profile.d
 cp command-not-found.py  %{buildroot}/usr/bin/cnf
 cp handler.sh %{buildroot}/etc/profile.d/91cnf.sh
+%find_lang %{name}
 
-
-%files
+%files -f %{name}.lang
 /usr/bin/cnf
 /etc/profile.d/91cnf.sh
