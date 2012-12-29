@@ -39,7 +39,7 @@ msgstr "Команда для поиска"
 #: command-not-found.py:74
 #, python-format
 msgid " Command '%s' can be found in:"
-msgstr "Команда '%s' найдена в:"
+msgstr " Команда '%s' найдена в:"
 
 #. mark that the package is already installed. Looks like e. g. (main, installed)
 #: command-not-found.py:79
@@ -81,4 +81,4 @@ msgstr "Команда %s не найдена, может имелось в ви
 #: command-not-found.py:118
 #, python-format
 msgid "  Command '%(cmd)s' from %(locations)s"
-msgstr " Команда '%(cmd)s' из пакета %(locations)s"
+msgstr "  Команда '%(cmd)s' из пакета %(locations)s"

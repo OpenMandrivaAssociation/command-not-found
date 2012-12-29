@@ -112,6 +112,7 @@ def main():
         print(_("%s: command not found") % param)
         return
     print(_(" No command '%s' found, did you mean:") % (param), file=sys.stderr)
+    print(found)
     for item in found:
         cmd_name, locations = item
         loc_string = ', '.join([(_("package") + " '%s' (%s)" % (c, r)) for r, c in locations])
