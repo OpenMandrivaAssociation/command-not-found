@@ -19,7 +19,7 @@ msgstr ""
 
 #: command-not-found.py:31
 msgid " Search for commands in repository. Remember: a normal program exit code is 127!"
-msgstr "Поиск комманд в репозитории. Нормальный код завершения программы всегда 127!"
+msgstr " Căutarea comenzi în depozit. De reţinut: un exemplu de exit pozitiv este 127!"
 
 #. translating this string, do not care anout spaces or new lines, it will be autoformatted by argparse
 #: command-not-found.py:33
@@ -28,57 +28,60 @@ msgid ""
 "            cnf will suggest you a command to install it and will ask you whether you want to do it right now\n"
 "            (with question and y/N options). If you do not want cnf to ask user anything - \n"
 "            set COMMAND_NOT_FOUND_TURN_OFF_INSTALL_PROMPT environment variable to 1."
-msgstr "В случае если запрашиваемая команда встречается только в одном пакете, cnf напечатет команду для установки этого пакета."
-"Так же будет предложено выполнить эту команду прямо сейчас. Если нужно чтобы cnf не задавал этот вопрос - "
-"установите переменную окружения COMMAND_NOT_FOUND_TURN_OFF_INSTALL_PROMPT = 1"
+msgstr ""
+"În cazul in care varianta rezultată, care conţine comanda , este unica, \n"
+"            cnf vă va sugera comanda ptr a instala , si vă va intreba daca doriţi să o faceţi chiar acum \n"
+"            (prin intermediul intrebărilor si , opţiuni d/N). Ca sa eliminaţi întrebările si opţinile  - \n"
+"            setaţi variabilele ambientale COMMAND_NOT_FOUND_TURN_OFF_INSTALL_PROMPT la 1."
+
 
 #: command-not-found.py:37
 msgid "Command to search for."
-msgstr "Команда для поиска"
+msgstr "Comandă de căutat"
 
 #: command-not-found.py:74
 #, python-format
 msgid " Command '%s' can be found in:"
-msgstr "Команда '%s' найдена в:"
+msgstr " Comanda '%s' poate fi găsită în:"
 
 #. mark that the package is already installed. Looks like e. g. (main, installed)
 #: command-not-found.py:79
 msgid ", installed"
-msgstr ", установлен"
+msgstr ", instalat"
 
 #: command-not-found.py:82 command-not-found.py:117
 msgid "package"
-msgstr "пакет"
+msgstr "pchet"
 
 #: command-not-found.py:89
 #, python-format
 msgid "File %s exists! Check your PATH variable, or call it using an absolute path."
-msgstr "Файл %s существует! Проверьте переменную окружения PATH или вызывайте команду ,используя абсолютный путь."
+msgstr "Fişierul %s există! Verificați variabila PATH-ului dumneavoastră, sau rechemaţi utilizarea unui PATH absolut."
 
 #: command-not-found.py:93
 msgid " You can install it by typing:"
-msgstr " Вы можете установить его, выполнив:"
+msgstr " Puteţi instala digitînd:"
 
 #: command-not-found.py:96
 msgid "Do you want to install it? (y/N)"
-msgstr "Хотите сделать это сейчас? (д/Н)"
+msgstr "Doriţi să-l instalaţi? (d/N)"
 
 #. any not 'y' string rejects the installation
 #: command-not-found.py:100
 msgid "y"
-msgstr "д"
+msgstr "d"
 
 #: command-not-found.py:112
 #, python-format
 msgid "%s: command not found"
-msgstr "%s: команда не найдена"
+msgstr "%s: Comandă inexistentă"
 
 #: command-not-found.py:114
 #, python-format
 msgid " No command '%s' found, did you mean:"
-msgstr "Команда %s не найдена, может имелось в виду:"
+msgstr " Nici o comandă '%s' găsită, aţi vrut :"
 
 #: command-not-found.py:118
 #, python-format
 msgid "  Command '%(cmd)s' from %(locations)s"
-msgstr " Команда '%(cmd)s' из пакета %(locations)s"
+msgstr "  Comandă '%(cmd)s' din %(locations)s"
