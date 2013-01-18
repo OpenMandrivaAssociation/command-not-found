@@ -1,6 +1,6 @@
 Name:           command-not-found
-Version:        1.1
-Release:        3
+Version:        1.2
+Release:        0
 Summary:        Command-not-found tool for ROSA
 Group:          File tools
 License:        GPLv2
@@ -19,9 +19,13 @@ or similar ones.
 
 %prep
 %setup -q -n %{name}
-
+        
 
 %install
+for d in `python localizer.py --list`; do\
+    mkdir -p %{buildroot}/usr/share/locale/$d/LC_MESSAGES;\
+    install -m 644 locale/$d/LC_MESSAGES/%{name}.mo %{buildroot}/usr/share/locale/$d/LC_MESSAGES/%{name}.mo;\
+done
 mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/etc/profile.d
 cp command-not-found.py  %{buildroot}/usr/bin/cnf
