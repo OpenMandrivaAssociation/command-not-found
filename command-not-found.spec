@@ -1,6 +1,6 @@
 Name:           command-not-found
 Version:        1.2
-Release:        2
+Release:        4
 Summary:        Command-not-found tool for ROSA
 Group:          File tools
 License:        GPLv2
