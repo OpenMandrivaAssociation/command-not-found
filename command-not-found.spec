@@ -1,6 +1,6 @@
 Name:           command-not-found
 Version:        1.2
-Release:        3
+Release:        4
 Summary:        Command-not-found tool for ROSA
 Group:          File tools
 License:        GPLv2
@@ -10,6 +10,7 @@ BuildArch:      noarch
 
 Requires:       command-not-found-data
 Requires:       python-json
+Requires:       python-rpm
 BuildRequires:  python(abi) = 2.7
 
 %description
