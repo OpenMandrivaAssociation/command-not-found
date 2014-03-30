@@ -1,7 +1,7 @@
 Name:           command-not-found
-Version:        1.1
-Release:        1
-Summary:        Command-not-found tool for ROSA
+Version:        1.2
+Release:        6
+Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
 URL:            N/A
@@ -10,6 +10,7 @@ BuildArch:      noarch
 
 Requires:       command-not-found-data
 Requires:       python-json
+Requires:       python-rpm
 BuildRequires:  python(abi) = 2.7
 
 %description
@@ -20,17 +21,15 @@ or similar ones.
 %prep
 %setup -q -n %{name}
 
-
 %install
+for d in `python localizer.py --list`; do\
+    mkdir -p %{buildroot}/usr/share/locale/$d/LC_MESSAGES;\
+    install -m 644 locale/$d/LC_MESSAGES/%{name}.mo %{buildroot}/usr/share/locale/$d/LC_MESSAGES/%{name}.mo;\
+done
 mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/etc/profile.d
 cp command-not-found.py  %{buildroot}/usr/bin/cnf
 cp handler.sh %{buildroot}/etc/profile.d/91cnf.sh
-
-for d in `python localizer.py --list`; do\
-    mkdir -p %{buildroot}/usr/share/locale/$d/LC_MESSAGES;\
-    install -m 644 locale/$d/LC_MESSAGES/command-not-found.mo %{buildroot}/usr/share/locale/$d/LC_MESSAGES/command-not-found.mo;\
-done
 
 %find_lang %{name}
 
