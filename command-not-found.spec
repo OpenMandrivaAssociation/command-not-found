@@ -1,6 +1,6 @@
 Name:           command-not-found
 Version:        1.2
-Release:        6
+Release:        7
 Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
@@ -20,6 +20,9 @@ or similar ones.
 
 %prep
 %setup -q -n %{name}
+# Requires rpm bindings that haven't been ported yet
+sed -i -e 's,/python,/python2,g' command-not-found.py
+2to3 -w localizer.py
 
 %install
 for d in `python localizer.py --list`; do\
@@ -34,5 +37,5 @@ cp handler.sh %{buildroot}/etc/profile.d/91cnf.sh
 %find_lang %{name}
 
 %files -f %{name}.lang
-/usr/bin/cnf
+%{_bindir}/cnf
 /etc/profile.d/91cnf.sh
