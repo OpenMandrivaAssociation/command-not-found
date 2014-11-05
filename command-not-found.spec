@@ -4,8 +4,8 @@ Release:        1
 Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
-URL:            N/A
-Source0:        https://abf.io/soft/abf-console-client/archive/%{name}-%{version}.tar.gz
+URL:            https://abf.io/soft/command-not-found
+Source0:        https://abf.io/soft/%{name}/archive/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
 Requires:       command-not-found-data
