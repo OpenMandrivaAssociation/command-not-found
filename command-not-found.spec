@@ -1,6 +1,6 @@
 Name:           command-not-found
 Version:        1.3
-Release:        4
+Release:        5
 Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
