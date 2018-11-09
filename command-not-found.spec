@@ -1,11 +1,12 @@
 Name:           command-not-found
 Version:        1.3
-Release:        6
+Release:        7
 Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
 URL:            https://abf.io/soft/command-not-found
 Source0:        https://abf.io/soft/%{name}/archive/%{name}-%{version}.tar.gz
+Patch0:		cnf-1.3-dnf.patch
 BuildArch:      noarch
 
 Requires:       command-not-found-data
@@ -19,7 +20,7 @@ list of packages (with repositories) where you can find this command
 or similar ones.
 
 %prep
-%setup -q
+%autosetup -p1
 # Requires rpm bindings that haven't been ported yet
 sed -i -e 's,/python,/python2,g' command-not-found.py
 2to3 -w localizer.py
