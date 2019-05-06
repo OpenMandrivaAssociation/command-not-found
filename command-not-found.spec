@@ -1,6 +1,6 @@
 Name:           command-not-found
 Version:        1.3
-Release:        7
+Release:        8
 Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
@@ -12,7 +12,7 @@ BuildArch:      noarch
 Requires:       command-not-found-data
 Requires:       python-json
 Requires:       python-rpm
-BuildRequires:  python(abi) = 2.7
+BuildRequires:  python(abi) >= 3.0
 
 %description
 When you call non-existent command in bash, you will get a 
@@ -21,9 +21,7 @@ or similar ones.
 
 %prep
 %autosetup -p1
-# Requires rpm bindings that haven't been ported yet
-sed -i -e 's,/python,/python2,g' command-not-found.py
-2to3 -w localizer.py
+find . -name "*.py" |xargs 2to3 -w
 
 %install
 for d in `python localizer.py --list`; do\
