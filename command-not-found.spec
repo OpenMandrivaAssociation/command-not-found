@@ -10,7 +10,6 @@ Patch0:		cnf-1.3-dnf.patch
 BuildArch:      noarch
 
 Requires:       command-not-found-data
-Requires:       python-json
 Requires:       python-rpm
 BuildRequires:  python(abi) >= 3.0
 
