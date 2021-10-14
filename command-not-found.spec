@@ -23,17 +23,17 @@ or similar ones.
 find . -name "*.py" |xargs 2to3 -w
 
 %install
-for d in `python localizer.py --list`; do\
-    mkdir -p %{buildroot}/usr/share/locale/$d/LC_MESSAGES;\
-    install -m 644 locale/$d/LC_MESSAGES/%{name}.mo %{buildroot}/usr/share/locale/$d/LC_MESSAGES/%{name}.mo;\
+for d in $(python localizer.py --list); do\
+    mkdir -p %{buildroot}%{_datadir}/locale/$d/LC_MESSAGES;\
+    install -m 644 locale/$d/LC_MESSAGES/%{name}.mo %{buildroot}%{_datadir}/locale/$d/LC_MESSAGES/%{name}.mo;\
 done
-mkdir -p %{buildroot}/usr/bin
-mkdir -p %{buildroot}/etc/profile.d
-cp command-not-found.py  %{buildroot}/usr/bin/cnf
-cp handler.sh %{buildroot}/etc/profile.d/91cnf.sh
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_sysconfdir}/profile.d
+cp command-not-found.py  %{buildroot}%{_bindir}/cnf
+cp handler.sh %{buildroot}%{_sysconfdir}/profile.d/91cnf.sh
 
 %find_lang %{name}
 
 %files -f %{name}.lang
 %{_bindir}/cnf
-/etc/profile.d/91cnf.sh
+%{_sysconfdir}/profile.d/91cnf.sh
