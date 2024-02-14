@@ -13,6 +13,7 @@ BuildArch:      noarch
 Requires:       command-not-found-data
 Requires:       python-rpm
 BuildRequires:  python(abi) >= 3.0
+BuildRequires:	gettext
 
 %description
 When you call non-existent command in bash, you will get a 
