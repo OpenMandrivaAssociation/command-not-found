@@ -1,6 +1,6 @@
 Name:           command-not-found
 Version:        1.3
-Release:        11
+Release:        12
 Summary:        Command-not-found tool for ROSA and OpenMandriva
 Group:          File tools
 License:        GPLv2
@@ -8,6 +8,7 @@ URL:            https://abf.io/soft/command-not-found
 Source0:        https://abf.io/soft/%{name}/archive/%{name}-%{version}.tar.gz
 Patch0:		cnf-1.3-dnf.patch
 Patch1:		command-not-found-fix-syntax-errors.patch
+Patch2:       cnf-python3-and-sudo-fix.patch
 BuildArch:      noarch
 
 Requires:       command-not-found-data
